@@ -183,20 +183,17 @@ struct fde32s {
 	unsigned char sib_scale;
 	unsigned char sib_index;
 	unsigned char sib_base;
-	union
-	{
+	union {
 		char disp8;
 		short disp16;
 		int disp32;
 	};
-	union
-	{
+	union {
 		char imm8;
 		short imm16;
 		int imm32;
 	};
-	union
-	{
+	union {
 		char imm8_2;
 		short imm16_2;
 	};
@@ -210,7 +207,7 @@ extern "C"
 #endif
 
 int encode(void *dest, struct fde32s *cmd);
-int decode(const void *src,  struct fde32s *cmd);
+int decode(const void *src, struct fde32s *cmd);
 
 #ifdef __cplusplus
 }
